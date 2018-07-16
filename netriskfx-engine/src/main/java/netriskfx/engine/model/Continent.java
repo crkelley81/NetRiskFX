@@ -1,9 +1,8 @@
 package netriskfx.engine.model;
 
-public interface Continent extends Identifiable, Displayable, Serializable {
+import java.io.Serializable;
+import java.util.Set;
 
-
-}
 public interface Continent extends Identifiable, Serializable, Displayable {
     /**
      * Returns the value of this territory if owned by a single

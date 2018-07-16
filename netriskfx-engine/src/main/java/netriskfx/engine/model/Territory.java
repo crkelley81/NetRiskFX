@@ -1,38 +1,14 @@
+package netriskfx.engine.model;
 
-/**
- * Role of an object that has an id.
- */
-public interface Identifiable {
-    public String getId();
-}
+import java.io.Serializable;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/**
- * Role of an object with a human readable display
- * name.
- */
-public interface Displayable {
-    public String getDisplayName();
-}
+import netriskfx.util.role.Displayable;
+import netriskfx.util.role.Identifiable;
 
-/**
- * 
- */
-public interface Player extends Identifiable, Serializable, Displayable {
-}
+
 
 public interface Territory extends Identifiable, Serializable, Displayable {
     public Player getOwner();
-}
-
-public interface TerritoryMap extends Identifiable, Serializable, Displayable {
-
-
-    public Stream<Territory> neighborsOf(final Territory territory, final Predicate<Territory> criteria);
-
-default public Stream<Territory> neighborsOf(final Territory territory) {
-    return neighborsOf(territory, t -> true);
-}
-
-    
-
 }
